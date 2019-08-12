@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="44px" viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>icn_filleadd</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icn_filleadd" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-5" transform="translate(1.000000, 1.000000)">
+            <path d="M21,42 C32.598,42 42,32.598 42,21 C42,9.402 32.598,0 21,0 C9.402,0 0,9.402 0,21 C0,32.598 9.402,42 21,42" id="Fill-1" fill="#FE801B"></path>
+            <path d="M19.9844,19.9746 L19.9844,14.9506 C19.9844,14.2536 20.5064,13.7306 21.2044,13.7306 C21.9014,13.7306 22.4234,14.2536 22.4234,14.9506 L22.4234,19.8296 L27.3024,19.8296 C28.0004,19.8296 28.5224,20.3526 28.5224,21.0496 C28.5224,21.7456 28.0004,22.2696 27.3024,22.2696 L22.2784,22.2696 L22.2784,27.2936 C22.2784,27.9906 21.7554,28.5136 21.0584,28.5136 C20.3624,28.5136 19.8384,27.9906 19.8384,27.2936 L19.8384,22.4136 L14.9604,22.4136 C14.2624,22.4136 13.7404,21.8916 13.7404,21.1946 C13.7404,20.4976 14.2624,19.9746 14.9604,19.9746 L19.9844,19.9746 Z" id="Fill-3" fill="#FFFFFF"></path>
+        </g>
+    </g>
+</svg>
