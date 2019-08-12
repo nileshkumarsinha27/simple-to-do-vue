@@ -1,9 +1,18 @@
 <template>
   <div class="input-container">
     <label for="todo-input">
-      <input :placeholder="placeHolderText" v-model="value" @keyup="enterHandler" />
+      <input
+        :placeholder="placeHolderText"
+        v-model="value"
+        @keyup="enterHandler"
+      />
     </label>
-    <img v-if="showIcon" alt="plus-icon" :src="addIcn" @click="addTodos" />
+    <img
+      v-if="showIcon && value.length > 0"
+      alt="plus-icon"
+      :src="addIcn"
+      @click="addTodos"
+    />
   </div>
 </template>
 <script>
@@ -59,7 +68,7 @@ export default {
   }
   input {
     box-sizing: border-box;
-    width: 100%;
+    width: 95%;
     padding: 20px 10px;
     border: none;
     border: 1px solid #d9dde1;

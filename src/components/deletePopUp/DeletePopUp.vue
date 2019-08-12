@@ -2,10 +2,12 @@
   <div class="delete-container">
     <div class="arrow-up" />
     <img :src="icnDelete" alt="delete" />
-    <span class="popup-text">{{popUpText}}</span>
+    <span class="popup-text">{{ popUpText }}</span>
     <div class="button-container">
       <span role="button" @click="cancelHandle">Cancel</span>
-      <span class="delete-text" role="button" @click="handleDelete">Delete</span>
+      <span class="delete-text" role="button" @click="handleDelete"
+        >Delete</span
+      >
     </div>
   </div>
 </template>
