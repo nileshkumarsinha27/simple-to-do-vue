@@ -65,4 +65,18 @@ export default {
     }
   }
 }
+@media (max-width: 1024px) {
+  .delete-container {
+    width: 60%;
+    img {
+      display: block;
+      box-sizing: border-box;
+      height: 30px;
+      width: 30px;
+    }
+    .popup-text {
+      font-size: 14px;
+    }
+  }
+}
 </style>

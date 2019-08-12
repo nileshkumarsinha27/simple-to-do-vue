@@ -52,5 +52,12 @@ label {
     top: 2px;
     cursor: pointer;
   }
+  @media (max-width: 1024px) {
+    input,
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
 }
 </style>

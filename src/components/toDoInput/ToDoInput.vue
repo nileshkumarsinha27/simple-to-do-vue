@@ -22,7 +22,7 @@ export default {
   props: ["showIcon"],
   methods: {
     enumId: function() {
-      return this.toDoList.length + 1;
+      return Math.random();
     },
     enterHandler: function(e) {
       if (e.key === CONSTANTS.ENTER_KEY) {
@@ -48,14 +48,18 @@ export default {
   box-sizing: border-box;
   height: 100px;
   text-align: center;
-  width: 50%;
+  width: 60%;
   justify-content: center;
   margin: 0 auto;
   display: flex;
   align-items: center;
+  label {
+    width: inherit;
+    display: block;
+  }
   input {
     box-sizing: border-box;
-    width: 700px;
+    width: 100%;
     padding: 20px 10px;
     border: none;
     border: 1px solid #d9dde1;
@@ -68,6 +72,22 @@ export default {
     box-sizing: border-box;
     &:hover {
       cursor: pointer;
+    }
+  }
+}
+@media (min-width: 480px) and (max-width: 1024px) {
+  .input-container {
+    width: 80%;
+    input {
+      font-size: 16px;
+    }
+  }
+}
+@media (min-width: 320px) and (max-width: 480px) {
+  .input-container {
+    width: 90%;
+    input {
+      font-size: 14px;
     }
   }
 }

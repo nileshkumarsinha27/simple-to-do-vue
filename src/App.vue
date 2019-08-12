@@ -13,6 +13,8 @@
   color: #2c3e50;
   background: #f1f4f8;
   min-height: 100vh;
+  height: auto;
+  overflow-x: hidden;
   box-sizing: border-box;
 }
 </style>

@@ -17,4 +17,9 @@ header {
   padding: 50px 0;
   color: #969ba0;
 }
+@media (min-width: 767px) and (max-width: 1024px) {
+  header {
+    font-size: 24px;
+  }
+}
 </style>

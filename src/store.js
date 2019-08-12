@@ -33,6 +33,13 @@ export default new Vuex.Store({
       );
       state.toDoList.splice(listIndex, 1);
       state.selectedIds.splice(selectedIndex, 1);
+    },
+    [MUTATIONS.DELETE_MULTIPLE_MULTIPLE]: function(state, payload) {
+      let a = new Set([...state.toDoList]);
+      let b = new Set([...payload]);
+      let difference = new Set([...a].filter(x => !b.has(x.id)));
+      state.toDoList = [...difference];
+      state.selectedIds = [];
     }
   },
   actions: {
@@ -44,6 +51,9 @@ export default new Vuex.Store({
     },
     [ACTIONS.DELETE_TO_DO]: function({ commit }, payload) {
       commit(MUTATIONS.DELETE_TO_DO_MUTATION, payload);
+    },
+    [ACTIONS.DELETE_MULTIPLE]: function({ commit }, payload) {
+      commit(MUTATIONS.DELETE_MULTIPLE_MULTIPLE, payload);
     }
   }
 });
