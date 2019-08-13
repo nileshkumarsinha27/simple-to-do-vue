@@ -5,13 +5,7 @@
       Selected:
       <span>{{ selectedIds.length }}</span>
     </p>
-    <button
-      v-if="selectedIds.length > 1"
-      class="delete-selected"
-      @click="handleMultiDelete"
-    >
-      Delete
-    </button>
+    <button v-if="selectedIds.length > 1" class="delete-selected" @click="handleMultiDelete">Delete</button>
     <ul class="to-do-list">
       <li v-for="item in toDoList" :key="item.id">
         <CheckBoxComponent :id="item.id" />
@@ -119,9 +113,17 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@keyframes transAnimation {
+@keyframes transAnimationLeft {
   0% {
     transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes transAnimationRight {
+  0% {
+    transform: translateX(200%);
   }
   100% {
     transform: translateX(0);
@@ -152,7 +154,12 @@ export default {
     align-items: center;
     height: 60px;
     position: relative;
-    animation: transAnimation 0.8s ease;
+    &:nth-of-type(2n + 1) {
+      animation: transAnimationLeft 0.8s ease;
+    }
+    &:nth-of-type(2n) {
+      animation: transAnimationRight 0.8s ease;
+    }
   }
 
   img {
