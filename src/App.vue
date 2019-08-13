@@ -11,7 +11,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  background: #f1f4f8;
+  background: #9e9e9e29;
   min-height: 100vh;
   height: auto;
   overflow-x: hidden;

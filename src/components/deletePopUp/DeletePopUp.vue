@@ -1,13 +1,13 @@
 <template>
   <div class="delete-container">
-    <div class="arrow-up" />
-    <img :src="icnDelete" alt="delete" />
-    <span class="popup-text">{{ popUpText }}</span>
-    <div class="button-container">
-      <span role="button" @click="cancelHandle">Cancel</span>
-      <span class="delete-text" role="button" @click="handleDelete"
-        >Delete</span
-      >
+    <div class="delete-modal">
+      <p>{{ popUpText }}</p>
+      <div class="button-container">
+        <span class="cancel-btn" role="button" @click="cancelHandle"
+          >Cancel</span
+        >
+        <span role="button" @click="handleDelete">Delete</span>
+      </div>
     </div>
   </div>
 </template>
@@ -25,59 +25,62 @@ export default {
 </script>
 <style lang="scss" scoped>
 .delete-container {
-  width: 30%;
-  padding: 20px;
   box-sizing: border-box;
-  background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  position: absolute;
-  box-shadow: 0 0 31px 0 rgba(0, 0, 0, 0.14);
-  z-index: 1;
-  top: 100%;
-  right: 5px;
-  .arrow-up {
-    width: 0;
-    height: 0;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  background: #000;
+  opacity: 0.99;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  .delete-modal {
     box-sizing: border-box;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 10px solid #fafcff;
+    width: 30%;
+    height: 200px;
     position: absolute;
-    top: -10px;
-    right: 10px;
-  }
-  .popup-text {
-    color: #969ba0;
-    font-size: 16px;
-    padding: 5px 0;
+    background: #fff;
     text-align: center;
-  }
-  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    box-shadow: 0 0 31px 0 rgba(0, 0, 0, 0.14);
+    border-radius: 10px;
+    top: 30%;
+    left: 30%;
+    opacity: 1;
     span {
-      font-size: 14px;
-      margin: 0 5px;
+      box-sizing: border-box;
+      display: inline-block;
+      margin: 5px;
+      height: 40px;
+      padding: 10px;
+      border-radius: 20px;
+      outline: none;
+      border: none;
+      background: #2c3e50;
+      color: #fff;
       cursor: pointer;
-      color: #969ba0;
-      &.delete-text {
-        color: #d43f3a;
+      &.cancel-btn {
+        background: #ff0000a6;
       }
     }
-  }
-}
-@media (max-width: 1024px) {
-  .delete-container {
-    width: 60%;
-    img {
-      display: block;
-      box-sizing: border-box;
-      height: 30px;
-      width: 30px;
+    p {
+      padding: 0 0 10px;
     }
-    .popup-text {
-      font-size: 14px;
+  }
+  @media (max-width: 767px) {
+    .delete-modal {
+      width: 90%;
+      left: 5%;
+    }
+  }
+  @media (min-width: 767px) and (max-width: 1024px) {
+    .delete-modal {
+      width: 80%;
+      left: 10%;
     }
   }
 }

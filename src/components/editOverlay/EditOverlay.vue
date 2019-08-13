@@ -1,8 +1,11 @@
 <template>
   <div class="edit-overlay-container">
     <div class="edit-modal">
+      <p>EDIT TODO</p>
       <input v-model="inputVal" />
-      <button @click="() => handleEdit(inputVal)">Update</button>
+      <button @click="() => handleEdit(inputVal)" :disabled="checkDisabled">
+        Update
+      </button>
     </div>
   </div>
 </template>
@@ -12,7 +15,12 @@ export default {
   props: ["handleEdit"],
   data: () => ({
     inputVal: localStorage.getItem("name") || ""
-  })
+  }),
+  computed: {
+    checkDisabled: function() {
+      return this.inputVal !== localStorage.getItem("name") ? false : true;
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>
@@ -48,6 +56,7 @@ export default {
       outline: none;
       border-bottom: 1px solid #d9dde1;
       padding: 10px 5px;
+      margin: 0 0 10px;
     }
     button {
       box-sizing: border-box;
@@ -58,9 +67,24 @@ export default {
       border-radius: 16px;
       outline: none;
       border: none;
-      background: #fe801b;
+      background: #2c3e50;
       color: #fff;
       cursor: pointer;
+    }
+    p {
+      padding: 0 0 10px;
+    }
+  }
+  @media (max-width: 767px) {
+    .edit-modal {
+      width: 90%;
+      left: 5%;
+    }
+  }
+  @media (min-width: 767px) and (max-width: 1024px) {
+    .edit-modal {
+      width: 80%;
+      left: 10%;
     }
   }
 }

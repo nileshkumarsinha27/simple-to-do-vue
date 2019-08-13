@@ -8,7 +8,7 @@
       />
     </label>
     <img
-      v-if="showIcon && value.length > 0"
+      v-show="showIcon && value.length > 0"
       alt="plus-icon"
       :src="addIcn"
       @click="addTodos"
